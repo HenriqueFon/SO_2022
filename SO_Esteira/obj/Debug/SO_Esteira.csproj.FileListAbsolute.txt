@@ -1,0 +1,7 @@
+C:\Users\Noberto\source\repos\SO_Esteira\SO_Esteira\obj\Debug\SO_Esteira.csprojAssemblyReference.cache
+C:\Users\Noberto\source\repos\SO_Esteira\SO_Esteira\obj\Debug\SO_Esteira.csproj.CoreCompileInputs.cache
+C:\Users\Noberto\source\repos\SO_Esteira\SO_Esteira\bin\Debug\SO_Esteira.exe.config
+C:\Users\Noberto\source\repos\SO_Esteira\SO_Esteira\bin\Debug\SO_Esteira.exe
+C:\Users\Noberto\source\repos\SO_Esteira\SO_Esteira\bin\Debug\SO_Esteira.pdb
+C:\Users\Noberto\source\repos\SO_Esteira\SO_Esteira\obj\Debug\SO_Esteira.exe
+C:\Users\Noberto\source\repos\SO_Esteira\SO_Esteira\obj\Debug\SO_Esteira.pdb
