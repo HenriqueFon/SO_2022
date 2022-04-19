@@ -16,7 +16,7 @@ namespace SO_Esteira
         {
             int nPedidos = primeiraLinha(filePath);
             Pedido[] arrayDePedidos=new Pedido[nPedidos];
-            List<Pedido> pedidosOrdenados = new List<Pedido>();
+            Ordenacao Ordernar=new Ordenacao();
             int percorrer = 0;
             string[] texto = new string[2];
             //Lê todas as linhas do arquivo
@@ -38,26 +38,17 @@ namespace SO_Esteira
                         nPacotes = Int32.Parse(texto[1]);
                         prazo = Int32.Parse(texto[2]);
                         arrayDePedidos[percorrer] = new Pedido(nome,nPacotes,prazo);
-                        var pedido1 = new Pedido(nome,nPacotes,prazo);
-                        pedidosOrdenados.Add(pedido1);
                         percorrer++;
                     }
                     file.Close();
                     //terminio da leitura do arquivo
                 }
             }
-             
-
-            
-            
-               
-            
-
             //Ordenar os arrays
-            //Fifo check
+            Ordenacao.Sort(arrayDePedidos);
 
-            
-            
+
+
             Console.ReadKey();
         }
 
@@ -68,6 +59,8 @@ namespace SO_Esteira
             int primeiraLinha = Convert.ToInt32(primeiraString);
             return primeiraLinha;
         }
+
+        
         /*public static void merge(Pedido[] arrayDePedidos, int left, int middle, int right)
         {
             //Transfere os elementos entre left e right para um array auxiliar
