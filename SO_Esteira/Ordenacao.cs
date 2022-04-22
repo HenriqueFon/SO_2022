@@ -11,7 +11,6 @@ namespace SO_Esteira
     {
         public static void Sort(Pedido[]array)
         {
-            ArrayList pedidos = new ArrayList();
             int tamanhoArray = array.Length;
             VetorPedidoAuxiliar Auxiliar;
 
@@ -20,18 +19,15 @@ namespace SO_Esteira
             {
                 for(int j = 0; j+1 < tamanhoArray; j++)
                 {
-                    if (array[j].getnPacotes() > array[j+1].getnPacotes())
+                    if (array[j].getnProdutos() > array[j+1].getnProdutos())
                     {
                         //Salva em uma variável auxiliar o valor que será substituido pelo menor objeto
-                        Auxiliar = new VetorPedidoAuxiliar(array[j].getNome(), array[j].getnPacotes(), array[j].getPrazo());
-                        array[j] = new Pedido(array[j + 1].getNome(), array[j + 1].getnPacotes(), array[j + 1].getPrazo());
-                        array[j + 1] = new Pedido(Auxiliar.getNome(), Auxiliar.getnPacotes(), Auxiliar.getPrazo());
+                        Auxiliar = new VetorPedidoAuxiliar(array[j].getNome(), array[j].getnProdutos(), array[j].getPrazo());
+                        array[j] = new Pedido(array[j + 1].getNome(), array[j + 1].getnProdutos(), array[j + 1].getPrazo());
+                        array[j + 1] = new Pedido(Auxiliar.getNome(), Auxiliar.getnProdutos(), Auxiliar.getPrazo());
                         
                     }
-                }
-               
-                
-                
+                }  
             }
             Printar(array);
         }

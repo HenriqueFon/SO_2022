@@ -10,13 +10,10 @@ namespace SO_Esteira
     class Program
     {
         static string filePath = "C:\\Users\\Noberto\\source\\repos\\SO_Esteira\\txt\\pedidos.txt";
-        static int horaInicio = 28800;
-        static int horaTerminio = 61200;
         static void Main(string[] args)
         {
             int nPedidos = primeiraLinha(filePath);
             Pedido[] arrayDePedidos=new Pedido[nPedidos];
-            Ordenacao Ordernar=new Ordenacao();
             int percorrer = 0;
             string[] texto = new string[2];
             //Lê todas as linhas do arquivo
@@ -24,7 +21,7 @@ namespace SO_Esteira
             {
                 using (StreamReader file = new StreamReader(filePath))
                 {
-                    int nPacotes, prazo;
+                    int nProdutos, prazo;
                     string linha, nome;
                     while ((linha = file.ReadLine()) != null)
                     {
@@ -35,21 +32,31 @@ namespace SO_Esteira
                         }
                         texto = linha.Split(';');
                         nome = texto[0];
-                        nPacotes = Int32.Parse(texto[1]);
+                        nProdutos = Int32.Parse(texto[1]);
                         prazo = Int32.Parse(texto[2]);
-                        arrayDePedidos[percorrer] = new Pedido(nome,nPacotes,prazo);
+                        arrayDePedidos[percorrer] = new Pedido(nome,nProdutos,prazo);
                         percorrer++;
                     }
                     file.Close();
                     //terminio da leitura do arquivo
                 }
             }
+
+
             //Ordenar os arrays
             Ordenacao.Sort(arrayDePedidos);
+            BracoMecanico.empacotar(arrayDePedidos);
+        
+
+            /*int resultado=0;
+            for (int i = 0; i < arrayDePedidos.Length; i++)
+            {
+                resultado = resultado + arrayDePedidos[i].getnProdutos();
+            }
+            Console.WriteLine(resultado / 20);*/
 
 
-
-            Console.ReadKey();
+           Console.ReadKey();
         }
 
         public static int primeiraLinha(string filePath)

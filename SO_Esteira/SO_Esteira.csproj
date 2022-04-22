@@ -48,6 +48,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BracoMecanico.cs" />
     <Compile Include="Ordenacao.cs" />
     <Compile Include="ListaPedidos.cs" />
     <Compile Include="Pedido.cs" />

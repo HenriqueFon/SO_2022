@@ -9,14 +9,14 @@ namespace SO_Esteira
 	class Pedido
 	{
 		private string nome;
-		private int nPacotes;
+		private int nProdutos;
 		private int prazo;
 
 		//Construtor
-		public Pedido(string nome, int nPacotes, int prazo)
+		public Pedido(string nome, int nProdutos, int prazo)
 		{
 			this.nome = nome;
-			this.nPacotes = nPacotes;
+			this.nProdutos = nProdutos;
 			this.prazo = prazo;
 		}
 
@@ -29,13 +29,13 @@ namespace SO_Esteira
         {
 			this.nome = Nome;
         }
-		public int getnPacotes()
+		public int getnProdutos()
         {
-			return nPacotes;
+			return nProdutos;
         }
-		public void setPacotes(int Pacotes)
+		public void setProdutos(int Produtos)
         {
-			this.nPacotes = Pacotes;
+			this.nProdutos = Produtos;
         }
 		public int getPrazo()
         {
@@ -47,7 +47,7 @@ namespace SO_Esteira
         }
 		public string toString()
         {
-			return "Nome:" + nome + " nPacotes:" + nPacotes + "Prazo:" + prazo;
+			return "Nome:" + nome + " nPacotes:" + nProdutos + "Prazo:" + prazo;
 				
 		}
 	}
