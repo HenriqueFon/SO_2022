@@ -29,7 +29,7 @@ namespace SO_Esteira
                     }
                 }  
             }
-            Printar(array);
+            
         }
         public static void Printar(Pedido[] array)
         {
