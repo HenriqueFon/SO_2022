@@ -63,6 +63,7 @@ namespace SO_Esteira
                 contadorPrazosNãoAtendidos++;
             }
             Console.WriteLine("Pedido Nº" + pedidoFinalizado + " finalizado no tempo:"+ horarioInicioExpediente);
+            tempoEmpacotamentoPedido = 0;//toda vez que um pedido acaba, essa variável é resetada para que possa fazer a contagem do tempo do próximo pedido
         }
         
         public static void funcionar(Pedido[] Array)
