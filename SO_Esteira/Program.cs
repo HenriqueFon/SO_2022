@@ -45,6 +45,7 @@ namespace SO_Esteira
             //Ordenar os arrays
             Ordenacao.Sort(ArrayDePedidos);
             BracoMecanico.funcionar(ArrayDePedidos);
+            Console.WriteLine("Trabalho Prático parte 1 feito por Henrique Fonseca Araújo e Ferlanio Duarte");
             Console.ReadKey();
         }
         public static int primeiraLinha(string filePath)
