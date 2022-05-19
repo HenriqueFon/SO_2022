@@ -18,7 +18,6 @@ namespace SO_Esteira
         {
             int nPedidos = primeiraLinha(arquivo);
             Pedido[] arrayDePedidos = new Pedido[nPedidos];
-            List<Pedido> pedidosOrdenados = new List<Pedido>();
             int percorrer = 0;
             string[] texto = new string[2];
             //Lê todas as linhas do arquivo
@@ -26,7 +25,7 @@ namespace SO_Esteira
             {
                 using (StreamReader file = new StreamReader(arquivo))
                 {
-                    int nPacotes, prazo;
+                    int nPacotes, prazo,hChegada;
                     string linha, nome;
                     while ((linha = file.ReadLine()) != null)
                     {
@@ -39,9 +38,8 @@ namespace SO_Esteira
                         nome = texto[0];
                         nPacotes = Int32.Parse(texto[1]);
                         prazo = Int32.Parse(texto[2]);
+                        hChegada = Int32.Parse(texto[3]);
                         arrayDePedidos[percorrer] = new Pedido(nome, nPacotes, prazo);
-                        var pedido1 = new Pedido(nome, nPacotes, prazo);
-                        pedidosOrdenados.Add(pedido1);
                         percorrer++;
                     }
                     file.Close();

@@ -11,6 +11,7 @@ namespace SO_Esteira
 		private string nome;
 		private int nProdutos;
 		private int prazo;
+		
 
 		//Construtor
 		public VetorPedidoAuxiliar(string nome, int nProdutos, int prazo)
@@ -45,6 +46,7 @@ namespace SO_Esteira
 		{
 			this.prazo = Prazo;
 		}
+		
 		public string toString()
 		{
 			return "Nome:" + nome + " nPacotes:" + nProdutos + "Prazo:" + prazo;

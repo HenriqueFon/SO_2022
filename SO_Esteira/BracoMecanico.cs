@@ -1,4 +1,5 @@
-﻿using System;
+﻿
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -58,18 +59,18 @@ namespace SO_Esteira
             }
             pedidoFinalizado++;
             //Se existir um prazo no pedido e ele não for concluído a tempo, contador aumenta
-            if (Array[i].getPrazo() != 0 && Array[i].getPrazo() < ((tempoEmpacotamentoPedido/60)/1000))//converte valor milisegundos para minutos
+            if (Array[i].getPrazo() != 0 && Array[i].getPrazo() > ((tempoEmpacotamentoPedido / 60) / 1000))//converte valor milisegundos para minutos
             {
                 contadorPrazosNãoAtendidos++;
             }
-            Console.WriteLine("Pedido Nº" + pedidoFinalizado + " finalizado no tempo:"+ horarioInicioExpediente);
+            Console.WriteLine("Pedido Nº" + pedidoFinalizado + " finalizado no tempo:" + horarioInicioExpediente);
             tempoEmpacotamentoPedido = 0;//toda vez que um pedido acaba, essa variável é resetada para que possa fazer a contagem do tempo do próximo pedido
         }
-        
+
         public static void funcionar(Pedido[] Array)
         {
             //enquanto o galpão não fechar ou os pacotes não tiverem terminados de serem embalados
-            while (i<tamanhoListaPedido)
+            while (i < tamanhoListaPedido)
             {
                 if (horarioInicioExpediente > meioDia && contadorMeioDia == 0)
                 {
@@ -79,7 +80,7 @@ namespace SO_Esteira
                 if (horarioInicioExpediente > horarioTerminioExpediente)
                 {
                     pedidosNaoAtendidos = tamanhoListaPedido - pedidoFinalizado;//tamanho da lista de pedido - pedidos que foram entregues até o momento
-                    Console.WriteLine("Pedidos não foram atendidos até a data limite. Faltaram:"+pedidosNaoAtendidos + " pedidos ");
+                    Console.WriteLine("Pedidos não foram atendidos até a data limite. Faltaram:" + pedidosNaoAtendidos + " pedidos ");
                     break;
                 }
                 empacotar(Array, i);
@@ -88,8 +89,8 @@ namespace SO_Esteira
             Console.WriteLine("Prazos não atendidos:" + contadorPrazosNãoAtendidos);
             Console.WriteLine("Pacotes embalados até meio dia " + printarPacotesMeioDia);
         }
-       
-        
+
+
 
         private static double ConverterParaHoras(double tempo)
         {
@@ -98,14 +99,14 @@ namespace SO_Esteira
         }
         private static void printarResultados()
         {
-            Console.WriteLine("Número de pacotes gerados:"+getPacotesEntregues());
-            Console.WriteLine("Número de pedidos finalizados:"+getPedidoFinalizado());
+            Console.WriteLine("Número de pacotes gerados:" + getPacotesEntregues());
+            Console.WriteLine("Número de pedidos finalizados:" + getPedidoFinalizado());
         }
         private static string produtosRestantes()
         {
 
             return "Pedidos não atendidos:" + (tamanhoListaPedido - getPedidoFinalizado());
-                
+
         }
     }
 

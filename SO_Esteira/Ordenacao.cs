@@ -21,11 +21,12 @@ namespace SO_Esteira
                 {
                     if (array[j].getnProdutos() > array[j+1].getnProdutos())
                     {
-                        //Salva em uma variável auxiliar o valor que será substituido pelo menor objeto
-                        Auxiliar = new VetorPedidoAuxiliar(array[j].getNome(), array[j].getnProdutos(), array[j].getPrazo());
-                        array[j] = new Pedido(array[j + 1].getNome(), array[j + 1].getnProdutos(), array[j + 1].getPrazo());
-                        array[j + 1] = new Pedido(Auxiliar.getNome(), Auxiliar.getnProdutos(), Auxiliar.getPrazo());
                         
+                         //Salva em uma variável auxiliar o valor que será substituido pelo menor objeto
+                         Auxiliar = new VetorPedidoAuxiliar(array[j].getNome(), array[j].getnProdutos(), array[j].getPrazo());
+                         array[j] = new Pedido(array[j + 1].getNome(), array[j + 1].getnProdutos(), array[j + 1].getPrazo());
+                         array[j + 1] = new Pedido(Auxiliar.getNome(), Auxiliar.getnProdutos(), Auxiliar.getPrazo());
+                       
                     }
                 }  
             }
@@ -33,13 +34,12 @@ namespace SO_Esteira
         }
         public static void Printar(Pedido[] array)
         {
-            for(int i = 0; i < array.Length; i++)
+            for (int i = 0; i < array.Length; i++)
             {
                 Console.WriteLine(array[i].toString());
             }
         }
-
-     
     }
-
 }
+
+

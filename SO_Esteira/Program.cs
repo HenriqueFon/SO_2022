@@ -1,4 +1,5 @@
-﻿using System;
+﻿
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -13,7 +14,7 @@ namespace SO_Esteira
         static void Main(string[] args)
         {
             int nPedidos = primeiraLinha(filePath);
-            Pedido[] ArrayDePedidos=new Pedido[nPedidos];
+            Pedido[] ArrayDePedidos = new Pedido[nPedidos];
             BracoMecanico.setTamanhoListaPedido(nPedidos);
             int percorrer = 0;
             string[] texto = new string[2];
